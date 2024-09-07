@@ -22,7 +22,11 @@
         statusElement.style.color = online ? "green" : "red";
       }
 
-      subscribeToOnlineStatus(updateStatus);
+      subscribeToOnlineStatus(
+        updateStatus,
+        "http://localhost:3000/api/ping",
+        "https://your-production-domain.com/api/ping"
+      );
 
       // Cleanup when the page is unloaded
       window.addEventListener("unload", cleanup);
