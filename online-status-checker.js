@@ -26,7 +26,7 @@ function debugLog(...args) {
 }
 
 // Constants for our script
-const WORKER_URL = "/online_offline_status_worker.js"; // Location of our service worker file
+const WORKER_URL = "./online_offline_status_worker.js"; // Location of our service worker file
 const CHECK_URL = "/api/ping"; // URL we'll use to check internet connection
 const CHECK_INTERVAL = 5000; // How often we check (in milliseconds) - every 5 seconds
 const TIMEOUT = 3000; // How long we wait for a response before giving up (in milliseconds) - 3 seconds
