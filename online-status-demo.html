@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Status Checker Demo</title>
+  </head>
+  <body>
+    <h1>Online Status Checker Demo</h1>
+    <p>Current status: <span id="status">Checking...</span></p>
+
+    <script type="module">
+      import {
+        subscribeToOnlineStatus,
+        cleanup,
+      } from "./online-status-checker.js";
+
+      const statusElement = document.getElementById("status");
+
+      function updateStatus(online) {
+        statusElement.textContent = online ? "Online" : "Offline";
+        statusElement.style.color = online ? "green" : "red";
+      }
+
+      subscribeToOnlineStatus(updateStatus);
+
+      // Cleanup when the page is unloaded
+      window.addEventListener("unload", cleanup);
+    </script>
+  </body>
+</html>
